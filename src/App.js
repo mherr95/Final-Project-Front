@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 //Components
 import Appointments from "./Components/Appointments";
@@ -68,19 +69,42 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container">
+        <div className="header">
           <div className="navigation-top">
             <div className="navItems">
-              <Link to="/" className="item">
-                Home
-              </Link>
-              <Link to="appointments" className="item">
-                Appointments
-              </Link>
+              <ul>
+                <li>
+                  <Link to="newAppointment" className="item-1">
+                    Appointment Request
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" className="item-2">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/staff" className="item-3">
+                    Staff
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/ouroffice" className="item-4">
+                    Our Office
+                  </Link>
+                </li>
+                <li>
+                  <Link to="appointments" className="item-">
+                    Appointments
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
         <Route path="/" exact component={Home} />
+        <Route path="/staff" />
+        <Route path="/ouroffice" />
         <Route
           path="/appointments"
           render={(props) => (

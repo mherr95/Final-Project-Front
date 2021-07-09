@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../ComponentsCSS/newAppointment.css";
 
 const appointmentURL = "http://localhost:5000/newAppointment";
 
@@ -59,7 +60,13 @@ class NewAppointment extends Component {
     return (
       <div>
         <h1>New Appointment Form</h1>
-        <form onSubmit={this.handleSubmit}>
+        <p>Schedule an appointment with Auburn Dental Center Today!</p>
+        <p>
+          To request appointment availability, please fill out the form below.
+          Our scheduling coordinator will contact you to confirm your
+          appointment.
+        </p>
+        <form onSubmit={this.handleSubmit} className="form-container">
           <label htmlFor="firstname"></label>
           <input
             type="text"
