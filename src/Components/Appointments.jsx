@@ -16,21 +16,22 @@ class Appointments extends Component {
           <tbody>
             {this.props.appointments.map((appointment) => {
               return (
-                <div>
-                  <tr>
-                    <td>{`${appointment.firstname} ${appointment.lastname}`}</td>
-                    <td>{appointment.phone}</td>
-                    <td>{appointment.email}</td>
-                    <td>{appointment.date}</td>
-                    <td>{appointment.description}</td>
-                  </tr>
-                  <tr>
-                    <button className="btn btn-light">Edit Appointment</button>
-                    <button className="btn btn-light">
-                      Cancel Appointment
-                    </button>
-                  </tr>
-                </div>
+                <tr key={appointment.appointment_id}>
+                  <td>{`${appointment.firstname} ${appointment.lastname}`}</td>
+                  <td>{appointment.phone}</td>
+                  <td>{appointment.email}</td>
+                  <td>{appointment.date}</td>
+                  <td>{appointment.description}</td>
+                  <button className="btn btn-dark">Edit Appointment</button>
+                  <button
+                    className="btn btn-danger"
+                    onDoubleClick={() =>
+                      this.props.deleteAppointment(appointment.appointment_id)
+                    }
+                  >
+                    Cancel Appointment
+                  </button>
+                </tr>
               );
             })}
             <tr className="appointment-button">
