@@ -53,9 +53,9 @@ class App extends Component {
       method: "DELETE",
     }).then((response) => {
       if (response.status === 200) {
-        this.getAppointment();
-        const findIndex = this.state.appointments;
-        findIndex((appointment) => appointment.appointment_id === id);
+        const findIndex = this.state.appointments.findIndex(
+          (appointment) => appointment.appointment_id === id
+        );
         const copyAppointment = [...this.state.appointments];
         copyAppointment.splice(findIndex, 1);
 
@@ -85,6 +85,7 @@ class App extends Component {
           path="/appointments"
           render={(props) => (
             <Appointments
+              {...props}
               getAppointment={this.getAppointment}
               appointments={this.state.appointments}
               handleAddAppointment={this.handleAddAppointment}
@@ -96,6 +97,7 @@ class App extends Component {
           path="/newAppointment"
           render={(props) => (
             <NewAppointment
+              {...props}
               getAppointment={this.getAppointment}
               handleAddAppointment={this.handleAddAppointment}
             />
