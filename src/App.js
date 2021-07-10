@@ -19,6 +19,7 @@ class App extends Component {
     };
     this.getAppointment = this.getAppointment.bind(this);
     this.handleAddAppointment = this.handleAddAppointment.bind(this);
+    this.deleteAppointment = this.deleteAppointment.bind(this);
   }
 
   componentDidMount() {
@@ -64,6 +65,7 @@ class App extends Component {
       });
     });
   }
+
   render() {
     return (
       <BrowserRouter>

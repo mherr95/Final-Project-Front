@@ -14,6 +14,7 @@ class NewAppointment extends Component {
       email: "",
       date: "",
       description: "",
+      showEditApp: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,6 +55,41 @@ class NewAppointment extends Component {
           description: "",
         });
       });
+  }
+
+  //   handleUpdateAppointment(id) {
+  //     fetch(`${appointmentURL}/${id}`, {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         firstname: this.state.firstname,
+  //         lastname: this.state.lastname,
+  //         phone: this.state.phone,
+  //         email: this.state.email,
+  //         date: this.state.date,
+  //         description: this.state.description,
+  //       }),
+  //     })
+  //       .then((response) => response.json())
+  //       .then((parseData) => {
+  //         const copyAppointment = [...this.state.appointments];
+  //         const findIndex = this.state.appointment.findIndex(
+  //           (appointment) => appointment.appointment_id === parseData.id
+  //         );
+  //         copyAppointment[findIndex] = parseData;
+
+  //         this.setState({
+  //           appointment: copyAppointment,
+  //         });
+  //       });
+  //   }
+
+  toggleUpdateAppointment(appointment) {
+    this.setState({
+      showEditApp: !this.state.showEditApp,
+    });
   }
 
   render() {
