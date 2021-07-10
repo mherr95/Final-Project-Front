@@ -53,17 +53,15 @@ class App extends Component {
     fetch(`${appointmentURL}/${id}`, {
       method: "DELETE",
     }).then((response) => {
-      if (response.status === 200) {
-        const findIndex = this.state.appointments.findIndex(
-          (appointment) => appointment.appointment_id === id
-        );
-        const copyAppointment = [...this.state.appointments];
-        copyAppointment.splice(findIndex, 1);
+      const findIndex = this.state.appointments.findIndex(
+        (appointment) => appointment.appointment_id === id
+      );
+      const copyAppointment = [...this.state.appointments];
+      copyAppointment.splice(findIndex, 1);
 
-        this.setState({
-          appointments: copyAppointment,
-        });
-      }
+      this.setState({
+        appointments: copyAppointment,
+      });
     });
   }
   render() {

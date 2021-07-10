@@ -22,27 +22,23 @@ class Appointments extends Component {
                   <td>{appointment.email}</td>
                   <td>{appointment.date}</td>
                   <td>{appointment.description}</td>
-                  <button className="btn btn-dark">Edit Appointment</button>
-                  <button
+                  <td className="btn btn-dark">Edit Appointment</td>
+                  <td
                     className="btn btn-danger"
                     onDoubleClick={() =>
                       this.props.deleteAppointment(appointment.appointment_id)
                     }
                   >
                     Cancel Appointment
-                  </button>
+                  </td>
                 </tr>
               );
             })}
-            <tr className="appointment-button">
-              <Link to="/newAppointment">
-                <button className="btn btn-primary">
-                  Create New Appointment
-                </button>
-              </Link>
-            </tr>
           </tbody>
         </table>
+        <Link to="/newAppointment">
+          <button className="btn btn-primary">Create New Appointment</button>
+        </Link>
       </div>
     );
   }
