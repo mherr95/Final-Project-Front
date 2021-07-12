@@ -3,7 +3,7 @@ import Axios from "axios";
 
 const appointmentURL = "http://localhost:5000/appointments";
 
-export default class EditSong extends Component {
+class EditAppointment extends Component {
   constructor(props) {
     super(props);
 
@@ -22,16 +22,16 @@ export default class EditSong extends Component {
     this.setState({ [event.currentTarget.id]: event.currentTarget.value });
   }
 
-  componentDidMount() {
-    this.setState({
-      firstname: this.props.appointment.firstname,
-      lastname: this.props.appointment.lastname,
-      phone: this.props.apponitment.phone,
-      email: this.props.appointment.email,
-      date: this.props.appointment.date,
-      description: this.props.appointment.description,
-    });
-  }
+  //   componentDidMount() {
+  //     this.setState({
+  //       firstname: this.props.appointment.firstname,
+  //       lastname: this.props.appointment.lastname,
+  //       phone: this.props.apponitment.phone,
+  //       email: this.props.appointment.email,
+  //       date: this.props.appointment.date,
+  //       description: this.props.appointment.description,
+  //     });
+  //   }
 
   handleUpdateAppointment = async (id) => {
     const payload = {
@@ -46,7 +46,7 @@ export default class EditSong extends Component {
       "Content-type": "application/json",
     };
     const appointmentId = this.props.appointment.appointment_Id;
-    await Axios.put(editAppointmentURL + `${appointmentId}`, payload, {
+    await Axios.put(appointmentURL + `${appointmentId}`, payload, {
       headers: headers,
     }).then((res) => {
       console.log(res);
@@ -112,3 +112,5 @@ export default class EditSong extends Component {
     );
   }
 }
+
+export default EditAppointment;

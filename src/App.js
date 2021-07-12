@@ -7,6 +7,7 @@ import "./App.css";
 import Appointments from "./Components/Appointments";
 import Home from "./Components/Home";
 import NewAppointment from "./Components/NewAppointment";
+import EditAppointment from "./Components/EditAppointment";
 
 const appointmentURL = "http:///localhost:5000/appointments";
 
@@ -127,6 +128,16 @@ class App extends Component {
             />
           )}
         />
+        <Route
+          path="/editappointment"
+          render={(props) => (
+            <EditAppointment
+              {...props}
+              getAppointment={this.getAppointment}
+              appointments={this.state.appointments}
+            />
+          )}
+        ></Route>
       </BrowserRouter>
     );
   }

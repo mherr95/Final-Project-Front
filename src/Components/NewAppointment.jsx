@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../ComponentsCSS/newAppointment.css";
+import EditAppointment from "./EditAppointment";
 
 const appointmentURL = "http://localhost:5000/newAppointment";
 
@@ -85,12 +86,6 @@ class NewAppointment extends Component {
   //         });
   //       });
   //   }
-
-  toggleUpdateAppointment(appointment) {
-    this.setState({
-      showEditApp: !this.state.showEditApp,
-    });
-  }
 
   render() {
     return (
