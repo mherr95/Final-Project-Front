@@ -8,7 +8,8 @@ import { Navbar, Nav } from "react-bootstrap";
 import Appointments from "./Components/Appointments";
 import Home from "./Components/Home";
 import NewAppointment from "./Components/NewAppointment";
-import EditAppointment from "./Components/EditAppointment";
+import Staff from "./Components/Staff";
+import OurOffice from "./Components/OurOffice";
 
 const appointmentURL = "http:///localhost:5000/appointments";
 
@@ -72,34 +73,67 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="header">
-          <div className="navigation-top">
-            <Navbar bg="light" variant="light">
-              <Navbar.Brand href="#home">
-                <img
-                  src="https://www.auburndentalcenterga.com/images/logo_black.png"
-                  alt="home-logo"
-                  className="logo"
-                />
-              </Navbar.Brand>
-              <Nav className="mr-auto">
-                <Link to="/" className="item">
-                  Home
-                </Link>
-                <Link to="/staff" className="item">
-                  Staff
-                </Link>
-                <Link to="/ouroffice" className="item">
-                  Our Office
-                </Link>
-                <Link to="newAppointment" className="item">
-                  Appointment Request
-                </Link>
-                <Link to="appointments" className="item">
-                  Appointments
-                </Link>
-              </Nav>
+          <Navbar bg="light" variant="light" sticky="top">
+            <Navbar>
+              <img
+                src="https://www.auburndentalcenterga.com/images/logo_black.png"
+                alt="home-logo"
+                className="logo"
+              />
             </Navbar>
-            {/* <Navbar
+            <Nav className="ml-auto">
+              <Link to="/" className="item">
+                Home
+              </Link>
+              <Link to="/staff" className="item">
+                Staff
+              </Link>
+              <Link to="/ouroffice" className="item">
+                Our Office
+              </Link>
+              <Link to="newAppointment" className="item">
+                Appointment Request
+              </Link>
+              <Link to="appointments" className="item">
+                Appointments
+              </Link>
+            </Nav>
+          </Navbar>
+        </div>
+        <Route path="/" exact component={Home} />
+        <Route path="/staff" component={Staff} />
+        <Route path="/ouroffice" component={OurOffice} />
+        <Route
+          path="/appointments"
+          render={(props) => (
+            <Appointments
+              {...props}
+              getAppointment={this.getAppointment}
+              appointments={this.state.appointments}
+              handleAddAppointment={this.handleAddAppointment}
+              deleteAppointment={this.deleteAppointment}
+            />
+          )}
+        />
+        <Route
+          path="/newAppointment"
+          render={(props) => (
+            <NewAppointment
+              {...props}
+              getAppointment={this.getAppointment}
+              handleAddAppointment={this.handleAddAppointment}
+            />
+          )}
+        />
+      </BrowserRouter>
+    );
+  }
+}
+
+export default App;
+
+{
+  /* <Navbar
               collapseOnSelect
               expand="sm"
               bg="light"
@@ -125,8 +159,10 @@ class App extends Component {
               <Link to="appointments" className="item">
                 Appointments
               </Link>
-            </Navbar> */}
-            {/* <Navbar className="navItems navbar">
+            </Navbar> */
+}
+{
+  /* <Navbar className="navItems navbar">
               <ul>
                 <li>
                   <Link to="newAppointment" className="item-1">
@@ -154,47 +190,5 @@ class App extends Component {
                   </Link>
                 </li>
               </ul>
-            </Navbar> */}
-          </div>
-        </div>
-        <Route path="/" exact component={Home} />
-        <Route path="/staff" />
-        <Route path="/ouroffice" />
-        <Route
-          path="/appointments"
-          render={(props) => (
-            <Appointments
-              {...props}
-              getAppointment={this.getAppointment}
-              appointments={this.state.appointments}
-              handleAddAppointment={this.handleAddAppointment}
-              deleteAppointment={this.deleteAppointment}
-            />
-          )}
-        />
-        <Route
-          path="/newAppointment"
-          render={(props) => (
-            <NewAppointment
-              {...props}
-              getAppointment={this.getAppointment}
-              handleAddAppointment={this.handleAddAppointment}
-            />
-          )}
-        />
-        <Route
-          path="/editappointment"
-          render={(props) => (
-            <EditAppointment
-              {...props}
-              getAppointment={this.getAppointment}
-              appointments={this.state.appointments}
-            />
-          )}
-        ></Route>
-      </BrowserRouter>
-    );
-  }
+            </Navbar> */
 }
-
-export default App;

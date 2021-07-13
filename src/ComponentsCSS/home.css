@@ -1,11 +1,47 @@
-h2 {
-  text-align: center;
-  color: blue;
-}
-
 /* .logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 } */
+
+.background-img {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.requestApp {
+  text-align: center;
+}
+
+.newAppointment-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-container {
+  text-align: center;
+}
+
+.home-header {
+  color: black;
+  margin: 20px;
+}
+
+.home-photo {
+  display: block;
+  margin: 10px;
+  width: 100%;
+  height: auto;
+}
+
+p {
+  text-align: left;
+  color: black;
+}
+
+.body {
+  background: white;
+}

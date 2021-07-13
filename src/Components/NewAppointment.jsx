@@ -89,10 +89,12 @@ class NewAppointment extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Appointment Request Form</h2>
-        <p>Schedule an appointment with Auburn Dental Center Today!</p>
-        <p>
+      <div className="newAppointment-container">
+        <h2 className="newAppointment-head">Appointment Request Form</h2>
+        <p className="requestApp">
+          Schedule an appointment with Auburn Dental Center Today!
+        </p>
+        <p className="requestApp">
           To request appointment availability, please fill out the form below.
           Our scheduling coordinator will contact you to confirm your
           appointment.

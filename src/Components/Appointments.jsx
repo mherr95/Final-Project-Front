@@ -30,7 +30,6 @@ class Appointments extends Component {
     } else {
       return (
         <div className="appointmentContainer">
-          <h1>Here lies the appointments</h1>
           <table className="table">
             <thead>
               <tr>

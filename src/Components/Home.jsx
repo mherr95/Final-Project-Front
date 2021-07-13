@@ -5,9 +5,21 @@ class Home extends Component {
   render() {
     return (
       <div className="home-container">
-        <div>
-          <h2>Family Dentist in Atlanta, GA</h2>
-          <p className="paragraph">
+        <div className="background-img">
+          <img
+            src="https://www.yatescenterdental.com/assets/videos/video-v1-bg.jpg"
+            alt="background"
+          />
+        </div>
+        <div className="home-photo ">
+          <img
+            src="https://www.milfordsmiles.com/assets/images/slideshow/slide1.jpg"
+            alt="top-img"
+          />
+        </div>
+        <div className="body">
+          <h2 className="home-header">Family Dentist in Atlanta, GA</h2>
+          <p>
             At Atlanta Dental Center, we are committed to your individual
             attention and strive to provide personalized oral health care
             tailored for your unique dental needs. We value our patient

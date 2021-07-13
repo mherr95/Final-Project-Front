@@ -1,5 +1,3 @@
-h1,
-strong,
-p {
-  /* text-align: center; */
+.newAppointment-head {
+  text-align: center;
 }
