@@ -14,8 +14,6 @@ import OurOffice from "./Components/OurOffice";
 let appointmentURL;
 
 if (process.env.NODE_ENV === "development") {
-  appointmentURL = "http:///localhost:5000/appointments";
-} else {
   appointmentURL = "https://boiling-basin-30116.herokuapp.com/appointments";
 }
 
