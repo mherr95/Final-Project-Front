@@ -37,7 +37,7 @@ class NewAppointment extends Component {
         phone: this.state.phone,
         email: this.state.email,
         date: this.state.date,
-        description: this.state.date,
+        description: this.state.description,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -101,7 +101,7 @@ class NewAppointment extends Component {
         </p>
         <Form onSubmit={this.handleSubmit} className="form-container">
           {/* <Form.Label>First Name</Form.Label> */}
-          <Form.Group controlId="firstname">
+          <Form.Group>
             <Form.Control
               type="text"
               id="firstname"
@@ -111,7 +111,7 @@ class NewAppointment extends Component {
             />
           </Form.Group>
           {/* <Form.Label>Last Name</Form.Label> */}
-          <Form.Group controlId="lastname">
+          <Form.Group>
             <Form.Control
               type="text"
               id="lastname"
@@ -121,7 +121,7 @@ class NewAppointment extends Component {
             />
           </Form.Group>
           {/* <Form.Label>Phone</Form.Label> */}
-          <Form.Group controlId="phone">
+          <Form.Group>
             <Form.Control
               type="tel"
               id="phone"
@@ -131,7 +131,7 @@ class NewAppointment extends Component {
             />
           </Form.Group>
 
-          <Form.Group controlId="email">
+          <Form.Group>
             <Form.Control
               type="email"
               id="email"
@@ -141,22 +141,22 @@ class NewAppointment extends Component {
             />
           </Form.Group>
 
-          <Form.Group controlId="description">
+          <Form.Group>
+            <Form.Control
+              type="date"
+              id="date"
+              onChange={this.handleChange}
+              value={this.state.date}
+            />
+          </Form.Group>
+
+          <Form.Group>
             <Form.Control
               type="text"
               id="description"
               onChange={this.handleChange}
               value={this.state.description}
               placeholder="Enter reason for visit"
-            />
-          </Form.Group>
-
-          <Form.Group controlId="date">
-            <Form.Control
-              type="date"
-              id="date"
-              onChange={this.handleChange}
-              value={this.state.date}
             />
           </Form.Group>
 
