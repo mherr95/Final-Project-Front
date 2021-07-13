@@ -73,15 +73,15 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="header">
-          <Navbar bg="light" variant="light" sticky="top">
-            <Navbar>
+          <Navbar bg="light" variant="light" fixed="top">
+            <Nav>
               <img
                 src="https://www.auburndentalcenterga.com/images/logo_black.png"
                 alt="home-logo"
                 className="logo"
               />
-            </Navbar>
-            <Nav className="ml-auto">
+            </Nav>
+            <Nav className="navbar-items">
               <Link to="/" className="item">
                 Home
               </Link>
