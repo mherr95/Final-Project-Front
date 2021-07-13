@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { Navbar, Nav } from "react-bootstrap";
 
 //Components
 import Appointments from "./Components/Appointments";
@@ -72,7 +73,60 @@ class App extends Component {
       <BrowserRouter>
         <div className="header">
           <div className="navigation-top">
-            <div className="navItems">
+            <Navbar bg="light" variant="light">
+              <Navbar.Brand href="#home">
+                <img
+                  src="https://www.auburndentalcenterga.com/images/logo_black.png"
+                  alt="home-logo"
+                  className="logo"
+                />
+              </Navbar.Brand>
+              <Nav className="mr-auto">
+                <Link to="/" className="item">
+                  Home
+                </Link>
+                <Link to="/staff" className="item">
+                  Staff
+                </Link>
+                <Link to="/ouroffice" className="item">
+                  Our Office
+                </Link>
+                <Link to="newAppointment" className="item">
+                  Appointment Request
+                </Link>
+                <Link to="appointments" className="item">
+                  Appointments
+                </Link>
+              </Nav>
+            </Navbar>
+            {/* <Navbar
+              collapseOnSelect
+              expand="sm"
+              bg="light"
+              className="navItems navbar"
+            >
+              <img
+                src="https://www.auburndentalcenterga.com/images/logo_black.png"
+                alt="home-logo"
+                className="logo"
+              />
+              <Link to="/" className="item">
+                Home
+              </Link>
+              <Link to="/staff" className="item">
+                Staff
+              </Link>
+              <Link to="/ouroffice" className="item">
+                Our Office
+              </Link>
+              <Link to="newAppointment" className="item">
+                Appointment Request
+              </Link>
+              <Link to="appointments" className="item">
+                Appointments
+              </Link>
+            </Navbar> */}
+            {/* <Navbar className="navItems navbar">
               <ul>
                 <li>
                   <Link to="newAppointment" className="item-1">
@@ -100,7 +154,7 @@ class App extends Component {
                   </Link>
                 </li>
               </ul>
-            </div>
+            </Navbar> */}
           </div>
         </div>
         <Route path="/" exact component={Home} />

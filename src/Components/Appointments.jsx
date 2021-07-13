@@ -45,13 +45,7 @@ class Appointments extends Component {
                     <td>{appointment.phone}</td>
                     <td>{appointment.email}</td>
                     <td>{appointment.date}</td>
-                    <td>{appointment.description}</td>
-                    <td
-                      className="btn btn-dark"
-                      onDoubleClick={() => this.toggleUpdateAppointment()}
-                    >
-                      Edit Appointment
-                    </td>
+                    {/* <td>{appointment.description}</td> */}
                     <td
                       className="btn btn-danger"
                       onDoubleClick={() =>
@@ -66,7 +60,7 @@ class Appointments extends Component {
             </tbody>
           </table>
           <Link to="/newAppointment">
-            <button className="btn btn-primary">Create New Appointment</button>
+            <button className="btn btn-primary">Request New Appointment</button>
           </Link>
         </div>
       );

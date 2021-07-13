@@ -6,9 +6,9 @@ class Home extends Component {
     return (
       <div className="home-container">
         <div>
-          <h2>Family Dentist in Auburn, GA</h2>
-          <p>
-            At Auburn Dental Center, we are committed to your individual
+          <h2>Family Dentist in Atlanta, GA</h2>
+          <p className="paragraph">
+            At Atlanta Dental Center, we are committed to your individual
             attention and strive to provide personalized oral health care
             tailored for your unique dental needs. We value our patient
             relationships, making it our priority to provide gentle and

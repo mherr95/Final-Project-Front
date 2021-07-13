@@ -2,7 +2,19 @@
   margin: 15px;
 }
 
-li {
-  display: inline;
+.navItems {
+  text-align: center;
   margin: 10px;
+}
+
+.item {
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
 }

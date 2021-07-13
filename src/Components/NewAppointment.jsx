@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../ComponentsCSS/newAppointment.css";
-import EditAppointment from "./EditAppointment";
+import { Form, Button } from "react-bootstrap";
 
 const appointmentURL = "http://localhost:5000/newAppointment";
 
@@ -90,14 +90,79 @@ class NewAppointment extends Component {
   render() {
     return (
       <div>
-        <h1>New Appointment Form</h1>
+        <h2>Appointment Request Form</h2>
         <p>Schedule an appointment with Auburn Dental Center Today!</p>
         <p>
           To request appointment availability, please fill out the form below.
           Our scheduling coordinator will contact you to confirm your
           appointment.
         </p>
-        <form onSubmit={this.handleSubmit} className="form-container">
+        <Form onSubmit={this.handleSubmit} className="form-container">
+          {/* <Form.Label>First Name</Form.Label> */}
+          <Form.Group controlId="firstname">
+            <Form.Control
+              type="text"
+              id="firstname"
+              onChange={this.handleChange}
+              value={this.state.firstname}
+              placeholder="First Name"
+            />
+          </Form.Group>
+          {/* <Form.Label>Last Name</Form.Label> */}
+          <Form.Group controlId="lastname">
+            <Form.Control
+              type="text"
+              id="lastname"
+              onChange={this.handleChange}
+              value={this.state.lastname}
+              placeholder="Last Name"
+            />
+          </Form.Group>
+          {/* <Form.Label>Phone</Form.Label> */}
+          <Form.Group controlId="phone">
+            <Form.Control
+              type="tel"
+              id="phone"
+              onChange={this.handleChange}
+              value={this.state.phone}
+              placeholder="000-000-0000"
+            />
+          </Form.Group>
+
+          <Form.Group controlId="email">
+            <Form.Control
+              type="email"
+              id="email"
+              onChange={this.handleChange}
+              value={this.state.email}
+              placeholder="example@example.com"
+            />
+          </Form.Group>
+
+          <Form.Group controlId="description">
+            <Form.Control
+              type="text"
+              id="description"
+              onChange={this.handleChange}
+              value={this.state.description}
+              placeholder="Enter reason for visit"
+            />
+          </Form.Group>
+
+          <Form.Group controlId="date">
+            <Form.Control
+              type="date"
+              id="date"
+              onChange={this.handleChange}
+              value={this.state.date}
+            />
+          </Form.Group>
+
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+        {/* <form onSubmit={this.handleSubmit} className="form-container">
           <label htmlFor="firstname"></label>
           <input
             type="text"
@@ -147,7 +212,7 @@ class NewAppointment extends Component {
             placeholder="Reason for visit"
           />
           <input type="submit" value="Submit" />
-        </form>
+        </form> */}
       </div>
     );
   }
