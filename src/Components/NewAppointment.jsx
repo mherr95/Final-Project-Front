@@ -2,7 +2,15 @@ import React, { Component } from "react";
 import "../ComponentsCSS/newAppointment.css";
 import { Form, Button } from "react-bootstrap";
 
-const appointmentURL = "http://localhost:5000/newAppointment";
+let appointmentURL;
+
+if (process.env.NODE_ENV === "development") {
+  appointmentURL = "http:///localhost:5000/appointments";
+} else {
+  appointmentURL = "https://boiling-basin-30116.herokuapp.com/";
+}
+
+console.log(appointmentURL);
 
 class NewAppointment extends Component {
   constructor(props) {

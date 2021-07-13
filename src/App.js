@@ -11,7 +11,13 @@ import NewAppointment from "./Components/NewAppointment";
 import Staff from "./Components/Staff";
 import OurOffice from "./Components/OurOffice";
 
-const appointmentURL = "http:///localhost:5000/appointments";
+let appointmentURL;
+
+if (process.env.NODE_ENV === "development") {
+  appointmentURL = "http:///localhost:5000/appointments";
+} else {
+  appointmentURL = "https://boiling-basin-30116.herokuapp.com/";
+}
 
 class App extends Component {
   constructor(props) {
