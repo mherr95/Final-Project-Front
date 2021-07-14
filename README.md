@@ -10,7 +10,7 @@ Link to Back-end: https://github.com/mherr95/Final-Project
 
 # Technologies Used
 
-* Framework/Libraries - Postgres, Express.js, Node.js, and React.js
+* Framework/Libraries - React.js and Bootstrap.
 
 # Features
 This full-stack web app was more an informative one and did not require a lot of functionality. 
@@ -19,4 +19,4 @@ On this web-app users are able to view information on the Dental clinic as well 
 
 # Future Improvements
 * Add user login
-* Add third-party API
+* Add third-party API to facilitate payments
